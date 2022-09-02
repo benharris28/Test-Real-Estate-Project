@@ -8,7 +8,7 @@ class App extends React.Component {
     listingData:ListingData.listings[0]
   }
 
-  const 
+ 
   
   render() {
 
