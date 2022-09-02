@@ -1,7 +1,7 @@
 export default {
   "listings": [
     {
-      "display_date": "2022-09-02"
+      "display_date": "2022-09-02",
       "city": "San Francisco",
       "property_type": "Condo",
       "num_units": 2,
