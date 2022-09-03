@@ -18,6 +18,8 @@ class App extends React.Component {
       ...this.state
     }
 
+    console.log(this.state.listingData)
+
     return (
       <ApiContext.Provider value={value}>
         <div className="app">

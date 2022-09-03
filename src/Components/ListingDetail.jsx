@@ -1,7 +1,7 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
 
-class Listing extends React.Component {
+class ListingDetail extends React.Component {
   static contextType = ApiContext;
 
   state = {
@@ -20,15 +20,8 @@ class Listing extends React.Component {
     const { listing } = this.state
     
     return (
-      <div className="listing">
-        <div className="listing-hero">
-          This is the listing component
-          <img className="listing-img" src={listing.listing_image_url} />
-          <div className="listing-sale-date">
-            Sold on {listing.prev_sale_date}
-            
-          </div>
-        </div>
+      <div className="listing-detail">
+       
 
         
         
@@ -38,4 +31,4 @@ class Listing extends React.Component {
   
 }
 
-export default Listing;
+export default ListingDetail;

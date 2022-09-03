@@ -10,12 +10,23 @@ class Game extends React.Component {
   //Display feedback for each guess
   //Count guesses
   //Display remaining guesses
-  
+
+  state = {
+    listing: this.context.listingData
+  }
+
+
+
   
   render() {
+
+    const listingTest = this.state.listing
+    console.log(listingTest)
+    
     return (
       <div>
         <Listing />
+     
       </div>
     )
   }
