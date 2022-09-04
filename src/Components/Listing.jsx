@@ -40,6 +40,13 @@ class Listing extends React.Component {
           detailTitle={listing.property_type}
         />
 
+        <ListingDetail 
+          showAnswer={showAnswer}
+          name="property_type"
+          helptext="Property Type"
+          detailTitle={listing.property_type}
+        />
+
         
         
       </div>
