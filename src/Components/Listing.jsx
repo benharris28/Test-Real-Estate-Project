@@ -14,13 +14,44 @@ class Listing extends React.Component {
   //Count guesses
   //Display remaining guesses
   
-  
+  showAnswer = (name) => {
+    console.log(name)
+    
+    let show = false;
+    
+    const listingStructure = {
+      city: 1,
+      property_type: -1,
+      num_units: 2,
+      beds: 2,
+      baths: 2,
+      built: 2,
+      sq_ft: 3,
+      lot_size: 3,
+      prev_sale_date: 4,
+      prev_sale_price: 4,
+      list_date: 5,
+      list_price: 5,
+    }
+    
+    if (this.context.currentGuess > listingStructure.name) {
+       show = true
+    }
+
+    return show;
+  }
+
   
   render() {
 
     const { listing } = this.state
     const updatedClass = "test"
-    const showAnswer = true
+    
+
+    
+
+    
+    
     
     return (
       <div className="listing">
@@ -33,18 +64,18 @@ class Listing extends React.Component {
           </div>
         </div>
 
-        <ListingDetail 
-          showAnswer={showAnswer}
+        <ListingDetail
+          showAnswer={() => this.showAnswer}
           name="property_type"
           helptext="Property Type"
           detailTitle={listing.property_type}
         />
 
         <ListingDetail 
-          showAnswer={showAnswer}
-          name="property_type"
+          showAnswer={() => this.showAnswer(name)}
+          name="lot_size"
           helptext="Property Type"
-          detailTitle={listing.property_type}
+          detailTitle={listing.lot_size}
         />
 
         

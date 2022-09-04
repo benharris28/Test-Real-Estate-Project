@@ -19,15 +19,19 @@ class ListingDetail extends React.Component {
 
     const { listing } = this.state
     const { showAnswer, name, helpText, detailTitle } = this.props
+    console.log(name)
+    const show = showAnswer(name)
+
+    console.log(show)
     
     return (
       <div className="listing-detail">
-        {showAnswer && 
-          <div className="listing-detail-answer-blur">ABCDEF</div>
+        {showAnswer(name) && 
+          <div className="listing-detail-answer-blur">Hello</div>
         }
 
-        {!showAnswer && 
-          <div className="listing-detail-answer">ABCDEF</div>
+        {!show && 
+          <div className="listing-detail-answer">This is showing</div>
         }
         
         

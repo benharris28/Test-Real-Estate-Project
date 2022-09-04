@@ -6,6 +6,8 @@ class GuessForm extends React.Component {
   static contextType = ApiContext;
 
   //Add validation to form
+
+  //Format the guess
   
 
   state = {
