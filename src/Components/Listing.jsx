@@ -1,5 +1,6 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
+import ListingDetail from './ListingDetail'
 
 class Listing extends React.Component {
   static contextType = ApiContext;
@@ -18,6 +19,8 @@ class Listing extends React.Component {
   render() {
 
     const { listing } = this.state
+    const updatedClass = "test"
+    const showAnswer = true
     
     return (
       <div className="listing">
@@ -29,6 +32,13 @@ class Listing extends React.Component {
             
           </div>
         </div>
+
+        <ListingDetail 
+          showAnswer={showAnswer}
+          name="property_type"
+          helptext="Property Type"
+          detailTitle={listing.property_type}
+        />
 
         
         
