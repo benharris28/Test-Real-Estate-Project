@@ -18,23 +18,12 @@ class Listing extends React.Component {
     console.log(name)
     
     let show = false;
+
+    const detailsList = ['location', 'property_type', 'lot_size']
     
-    const listingStructure = {
-      city: 1,
-      property_type: -1,
-      num_units: 2,
-      beds: 2,
-      baths: 2,
-      built: 2,
-      sq_ft: 3,
-      lot_size: 3,
-      prev_sale_date: 4,
-      prev_sale_price: 4,
-      list_date: 5,
-      list_price: 5,
-    }
     
-    if (this.context.currentGuess > listingStructure.name) {
+    
+    if (this.context.currentGuess > detailsList.indexOf(name) && this.context.currentGuess) {
        show = true
     }
 
@@ -45,7 +34,7 @@ class Listing extends React.Component {
   render() {
 
     const { listing } = this.state
-    const updatedClass = "test"
+   
     
 
     
@@ -65,16 +54,24 @@ class Listing extends React.Component {
         </div>
 
         <ListingDetail
-          showAnswer={() => this.showAnswer}
+          showAnswer={() => this.showAnswer(name)}
+          name="location"
+          helpText="Location"
+          detailTitle={listing.property_type}
+          value={`${listing.city}, ${listing.province}`}
+        />
+        
+        <ListingDetail
+          showAnswer={() => this.showAnswer(name)}
           name="property_type"
-          helptext="Property Type"
+          helpText="Property Type"
           detailTitle={listing.property_type}
         />
 
         <ListingDetail 
           showAnswer={() => this.showAnswer(name)}
           name="lot_size"
-          helptext="Property Type"
+          helpText="Property Type"
           detailTitle={listing.lot_size}
         />
 

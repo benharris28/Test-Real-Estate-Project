@@ -3,6 +3,7 @@ export default {
     {
       "display_date": "2022-09-02",
       "city": "San Francisco",
+      "province": "Ontario",
       "property_type": "Condo",
       "num_units": 2,
       "beds": 2,

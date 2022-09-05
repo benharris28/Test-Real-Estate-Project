@@ -18,7 +18,7 @@ class ListingDetail extends React.Component {
   render() {
 
     const { listing } = this.state
-    const { showAnswer, name, helpText, detailTitle } = this.props
+    const { showAnswer, name, helpText, detailTitle, value } = this.props
     console.log(name)
     const show = showAnswer(name)
 
@@ -26,16 +26,16 @@ class ListingDetail extends React.Component {
     
     return (
       <div className="listing-detail">
-        {showAnswer(name) && 
-          <div className="listing-detail-answer-blur">Hello</div>
+        {show && 
+          <div className="listing-detail-answer-blur">{value}</div>
         }
 
         {!show && 
-          <div className="listing-detail-answer">This is showing</div>
+          <div className="listing-detail-answer">This will not show for production</div>
         }
         
         
-        <div className="listing-detail-title">{detailTitle}</div>
+        <div className="listing-detail-title">{helpText}</div>
 
         
         
