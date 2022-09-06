@@ -42,6 +42,9 @@ class GuessForm extends React.Component {
     return (
       <div>
         This is the GuessForm Component
+        <div className="feedback-area">
+          
+        </div>
         <form
           className="guess-form"
         >

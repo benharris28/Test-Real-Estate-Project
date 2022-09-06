@@ -11,18 +11,21 @@ class Game extends React.Component {
   //Display feedback for each guess
   //Count guesses
   //Display remaining guesses
+  //End game after guesses is complete
 
   state = {
     listing: this.context.listingData
   }
 
   //Should the game continue? Check guess number and compare to total fields
+  //Create Feedback Component
   
   
   render() {
 
-    const listingTest = this.state.listing
-    console.log(listingTest)
+    const maxGuesses = 5
+    
+  
 
   
     const detailsToShow = []
