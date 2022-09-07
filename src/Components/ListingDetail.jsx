@@ -27,15 +27,15 @@ class ListingDetail extends React.Component {
     return (
       <div className="listing-detail">
         {show && 
-          <div className="listing-detail-answer-blur">{value}</div>
+          <div className="listing-detail-answer">{value}</div>
         }
 
         {!show && 
-          <div className="listing-detail-answer">This will not show for production</div>
+          <div className="listing-detail-answer-blur">Placeholder</div>
         }
         
         
-        <div className="listing-detail-title">{helpText}</div>
+      
 
         
         

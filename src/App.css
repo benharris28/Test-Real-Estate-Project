@@ -1,5 +1,18 @@
-main {
-  text-align: center;
-  vertical-align: center;
-  line-height: 100vh
+
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 500px;
+}
+
+.carg-img {
+  object-fit: cover;
+  width: 200px;
+}
+
+.listing-detail-answer-blur {
+  filter: blur(5px);
 }

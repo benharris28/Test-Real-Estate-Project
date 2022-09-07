@@ -4,6 +4,8 @@ import ListingData from './ListingData';
 import ApiContext from './ApiContext';
 import Game from './Components/Game';
 import { isWinningGuess } from './Services/GameCalcs';
+import Container from 'react-bootstrap/Container';
+
 
 class App extends React.Component {
 // Start a new game
@@ -100,14 +102,18 @@ class App extends React.Component {
 
     return (
       <ApiContext.Provider value={value}>
-        <div className="app">
+        
+           <div className="app">
+             <Container className="p-3">
           <header>
             Testing
           </header>
           
           <Game />
-         
+           </Container>
         </div>
+      
+       
     </ApiContext.Provider>
   )
   }

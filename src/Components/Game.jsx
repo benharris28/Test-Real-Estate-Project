@@ -3,6 +3,7 @@ import ApiContext from '../ApiContext'
 import Listing from './Listing'
 import GuessForm from './GuessForm'
 
+
 class Game extends React.Component {
   static contextType = ApiContext;
 
@@ -31,7 +32,7 @@ class Game extends React.Component {
     const detailsToShow = []
     
     return (
-      <div>
+      <div className="game">
         <Listing />
         <GuessForm />
      

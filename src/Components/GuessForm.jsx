@@ -1,5 +1,6 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
+import Alert from 'react-bootstrap/Alert';
 
 
 class GuessForm extends React.Component {
@@ -42,15 +43,15 @@ class GuessForm extends React.Component {
     
     return (
       <div>
-        This is the GuessForm Component
+     
         <div className="feedback-area">
-          {!currentGuess && <div>Time to put in your first guess</div>}
+          {!currentGuess && <Alert variant="success">Time to put in your first guess</Alert>}
 
           {currentGuess && !gameOver && <div>Time to put in your next guess</div>}
 
           {gameResult === 'win' && <div>You guessed correctly! You have a bright future as a realtor</div>}
 
-          {gameResult === 'lose' && <div>Game over! You will never be a realtor!</div>}
+          {gameResult === 'lose' && <Alert variant="danger">Game over! You will never be a realtor!</Alert>}
         </div>
 
         {!gameOver && 

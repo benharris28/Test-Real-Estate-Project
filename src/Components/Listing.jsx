@@ -1,6 +1,9 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
 import ListingDetail from './ListingDetail'
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 class Listing extends React.Component {
   static contextType = ApiContext;
@@ -44,14 +47,28 @@ class Listing extends React.Component {
     
     return (
       <div className="listing">
+        <Card>
+          <Card.Img variant="top" src={listing.listing_image_url} />
         <div className="listing-hero">
           This is the listing component
-          <img className="listing-img" src={listing.listing_image_url} />
+          
           <div className="listing-sale-date">
             Sold on {listing.prev_sale_date}
             
           </div>
         </div>
+
+          <Card.ImgOverlay>
+        <Card.Title>Sold on {listing.prev_sale_date} </Card.Title>
+       
+      </Card.ImgOverlay>
+
+        <Card.Body>
+
+      
+        
+           <Card>
+          <Card.Title>Location</Card.Title>
 
         <ListingDetail
           showAnswer={() => this.showAnswer(name)}
@@ -60,6 +77,7 @@ class Listing extends React.Component {
           detailTitle={listing.property_type}
           value={`${listing.city}, ${listing.province}`}
         />
+         </Card>
         
         <ListingDetail
           showAnswer={() => this.showAnswer(name)}
@@ -76,7 +94,10 @@ class Listing extends React.Component {
         />
 
         
-        
+
+        </Card.Body>
+        </Card>
+     
       </div>
     )
   }
