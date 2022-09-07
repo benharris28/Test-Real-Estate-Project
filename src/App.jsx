@@ -19,7 +19,8 @@ class App extends React.Component {
     gameState: 'new',
     streak: null,
     userGameId: '',
-    gameOver: false
+    gameOver: false,
+    gameResult: null
   }
 
  componentDidMount = () => {
@@ -58,6 +59,18 @@ class App extends React.Component {
       if (guessCount >= maxGuesses || checkForWin) {
         this.setState({
           gameOver: true
+        })
+      }
+
+      if (checkForWin) {
+        this.setState({
+          gameResult: 'win'
+        })
+      }
+
+       if (guessCount >= maxGuesses && !checkForWin) {
+        this.setState({
+          gameResult: 'lose'
         })
       }
 

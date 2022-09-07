@@ -32,19 +32,28 @@ class GuessForm extends React.Component {
     })
   }
 
+ 
 
   
   render() {
 
     console.log(this.state)
-  
+    const { gameOver, currentGuess, gameResult } = this.context;
     
     return (
       <div>
         This is the GuessForm Component
         <div className="feedback-area">
-          
+          {!currentGuess && <div>Time to put in your first guess</div>}
+
+          {currentGuess && !gameOver && <div>Time to put in your next guess</div>}
+
+          {gameResult === 'win' && <div>You guessed correctly! You have a bright future as a realtor</div>}
+
+          {gameResult === 'lose' && <div>Game over! You will never be a realtor!</div>}
         </div>
+
+        {!gameOver && 
         <form
           className="guess-form"
         >
@@ -63,6 +72,7 @@ class GuessForm extends React.Component {
             Guess
           </button>
         </form>
+        }
      
       </div>
     )
