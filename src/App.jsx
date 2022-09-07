@@ -6,6 +6,7 @@ import Game from './Components/Game';
 import { isWinningGuess } from './Services/GameCalcs';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import * as dayjs from 'dayjs'
 
 
 class App extends React.Component {
@@ -93,7 +94,8 @@ class App extends React.Component {
 
   
   render() {
-    const today = new Date();
+    const today = dayjs();
+    
     
     
     const value = {
