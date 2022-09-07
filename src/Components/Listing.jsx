@@ -23,10 +23,10 @@ class Listing extends React.Component {
     let show = false;
 
     const detailsList = ['location', 'property_type', 'lot_size']
+    const totalGuesses = this.context.guesses.length
     
     
-    
-    if (this.context.currentGuess > detailsList.indexOf(name) && this.context.currentGuess) {
+    if (totalGuesses > detailsList.indexOf(name) && this.context.currentGuess) {
        show = true
     }
 
@@ -78,20 +78,28 @@ class Listing extends React.Component {
           value={`${listing.city}, ${listing.province}`}
         />
          </Card>
-        
+
+        <Card>
+          <Card.Title>Property Type</Card.Title>
         <ListingDetail
           showAnswer={() => this.showAnswer(name)}
           name="property_type"
           helpText="Property Type"
           detailTitle={listing.property_type}
+          value={'Test'}
         />
+        </Card>
 
+          
+        <Card>
+          <Card.Title>Lot Size</Card.Title>
         <ListingDetail 
           showAnswer={() => this.showAnswer(name)}
           name="lot_size"
           helpText="Property Type"
           detailTitle={listing.lot_size}
         />
+        </Card>
 
         
 
