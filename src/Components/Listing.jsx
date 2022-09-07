@@ -22,7 +22,7 @@ class Listing extends React.Component {
     
     let show = false;
 
-    const detailsList = ['location', 'property_type', 'lot_size']
+    const detailsList = ['location', 'property_type', 'beds', 'sq_ft', 'lot_size']
     const totalGuesses = this.context.guesses.length
     
     
@@ -64,7 +64,7 @@ class Listing extends React.Component {
 
       
         
-           <Card>
+           <Card className="margin-bottom">
           <Card.Title>Location</Card.Title>
 
         <ListingDetail
@@ -76,7 +76,7 @@ class Listing extends React.Component {
         />
          </Card>
 
-        <Card>
+        <Card className="margin-bottom">
           <Card.Title>Property Type</Card.Title>
         <ListingDetail
           showAnswer={this.showAnswer}
@@ -87,6 +87,28 @@ class Listing extends React.Component {
         />
         </Card>
 
+
+          <Card className="margin-bottom">
+          <Card.Title>Bedrooms</Card.Title>
+        <ListingDetail 
+          showAnswer={this.showAnswer}
+          name="beds"
+          helpText="Bedrooms"
+          detailTitle={listing.beds}
+          value={listing.beds}
+        />
+        </Card>
+
+           <Card className="margin-bottom">
+          <Card.Title>Square Ft</Card.Title>
+        <ListingDetail 
+          showAnswer={this.showAnswer}
+          name="sq_ft"
+          helpText="Square Feet"
+          detailTitle={listing.sq_ft}
+          value={listing.sq_ft}
+        />
+        </Card>
           
         <Card>
           <Card.Title>Lot Size</Card.Title>
