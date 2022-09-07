@@ -3,6 +3,7 @@ import React from 'react';
 import ListingData from './ListingData';
 import ApiContext from './ApiContext';
 import Game from './Components/Game';
+import { isWinningGuess } from './Services/GameCalcs';
 
 class App extends React.Component {
 // Start a new game
@@ -34,18 +35,7 @@ class App extends React.Component {
      
   }
 
-  evaluateWinner = (guess) => {
-    //This function will determine whether guess is a winner
-    
-    const THRESHOLD_WIN = 0.01;
-    const THRESHOLD_CLOSE = 0.1;
-    const salePrice = this.context.listingData.sold_price
-
-    const score = Math.abs((guess - salePrice) / salePrice);
-
-    if (score)
-    
-  }
+ 
   
   updateGuess = (guess) => {
     //Check if game is already over (on reload)
@@ -53,10 +43,8 @@ class App extends React.Component {
     //Determine if the guess is a winner
     //If guess not a winner, determine if game should continue
     const { gameOver } = this.state;
+    const soldPrice = this.state.listingData.sold_price
 
-    if (gameOver) {
-      
-    }
     
     this.setState({
       guesses: [...this.state.guesses, guess]
@@ -65,9 +53,11 @@ class App extends React.Component {
       const maxGuesses = 5
       const totalGuesses = guessCount + 1
 
-      if (totalGuesses >= maxGuesses) {
+      const checkForWin = isWinningGuess(guess, soldPrice);
+
+      if (guessCount >= maxGuesses || checkForWin) {
         this.setState({
-          gameState: lose
+          gameOver: true
         })
       }
 
