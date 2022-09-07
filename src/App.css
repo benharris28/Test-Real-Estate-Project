@@ -16,3 +16,7 @@
 .listing-detail-answer-blur {
   filter: blur(5px);
 }
+
+.margin-bottom {
+  margin-bottom: 1rem;
+}

@@ -5,6 +5,7 @@ import ApiContext from './ApiContext';
 import Game from './Components/Game';
 import { isWinningGuess } from './Services/GameCalcs';
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 class App extends React.Component {
@@ -104,10 +105,13 @@ class App extends React.Component {
       <ApiContext.Provider value={value}>
         
            <div className="app">
+             <Navbar bg="light">
+            <Container>
+              <Navbar.Brand href="#home">Peak Real Estate Game</Navbar.Brand>
+            </Container>
+          </Navbar>
              <Container className="p-3">
-          <header>
-            Testing
-          </header>
+          
           
           <Game />
            </Container>

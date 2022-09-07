@@ -42,9 +42,9 @@ class GuessForm extends React.Component {
     const { gameOver, currentGuess, gameResult } = this.context;
     
     return (
-      <div>
+      <div className="margin-bottom medium">
      
-        <div className="feedback-area">
+        <div className="feedback-area margin-bottom">
           {!currentGuess && <Alert variant="success">Time to put in your first guess</Alert>}
 
           {currentGuess && !gameOver && <div>Time to put in your next guess</div>}

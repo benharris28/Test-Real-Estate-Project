@@ -46,7 +46,7 @@ class Listing extends React.Component {
     
     
     return (
-      <div className="listing">
+      <div className="listing margin-bottom">
         <Card>
           <Card.Img variant="top" src={listing.listing_image_url} />
         <div className="listing-hero">
