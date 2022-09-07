@@ -93,7 +93,9 @@ class App extends React.Component {
 
   
   render() {
-
+    const today = new Date();
+    
+    
     const value = {
       ...this.state,
       updateGuess: this.updateGuess,
