@@ -50,12 +50,9 @@ class Listing extends React.Component {
         <Card>
           <Card.Img variant="top" src={listing.listing_image_url} />
         <div className="listing-hero">
-          This is the listing component
           
-          <div className="listing-sale-date">
-            Sold on {listing.prev_sale_date}
-            
-          </div>
+          
+         
         </div>
 
           <Card.ImgOverlay>
@@ -71,7 +68,7 @@ class Listing extends React.Component {
           <Card.Title>Location</Card.Title>
 
         <ListingDetail
-          showAnswer={() => this.showAnswer(name)}
+          showAnswer={this.showAnswer}
           name="location"
           helpText="Location"
           detailTitle={listing.property_type}
@@ -82,11 +79,11 @@ class Listing extends React.Component {
         <Card>
           <Card.Title>Property Type</Card.Title>
         <ListingDetail
-          showAnswer={() => this.showAnswer(name)}
+          showAnswer={this.showAnswer}
           name="property_type"
           helpText="Property Type"
           detailTitle={listing.property_type}
-          value={'Test'}
+          value={listing.property_type}
         />
         </Card>
 
@@ -94,10 +91,11 @@ class Listing extends React.Component {
         <Card>
           <Card.Title>Lot Size</Card.Title>
         <ListingDetail 
-          showAnswer={() => this.showAnswer(name)}
+          showAnswer={this.showAnswer}
           name="lot_size"
-          helpText="Property Type"
+          helpText="Lot Size"
           detailTitle={listing.lot_size}
+          value={listing.lot_size}
         />
         </Card>
 
