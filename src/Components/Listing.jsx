@@ -9,7 +9,7 @@ class Listing extends React.Component {
   static contextType = ApiContext;
 
   state = {
-    listing: this.context.listingData
+    listing: this.context.currentListing
   }
   //Import listing data and component
   //Use a form to input guesses and format them to currency
@@ -36,7 +36,8 @@ class Listing extends React.Component {
   
   render() {
 
-    const { listing } = this.state
+    const listing = this.context.currentListing
+    console.log(listing)
    
     
 

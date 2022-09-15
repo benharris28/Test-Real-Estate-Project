@@ -16,6 +16,7 @@ class App extends React.Component {
   //Check if client has played game with that ID (from local storgage)
   state = {
     listingData:ListingData.listings[0],
+    listings: ListingData.listings,
     guesses: [],
     currentGuess: '',
     finished: false,
@@ -24,12 +25,33 @@ class App extends React.Component {
     streak: null,
     userGameId: '',
     gameOver: false,
-    gameResult: null
+    gameResult: null,
+    currentDate: '',
+    currentListing: ''
   }
 
  componentDidMount = () => {
+   //Pull in the correct listing
+   const a = dayjs().format('YYYY-MM-DD')
+   console.log(a)
+
+   this.setState({
+     currentDate: a
+   }, this.updateListing)
+   
    this.updateUserInfo();
  }
+
+  updateListing = () => {
+    console.log('listing updated')
+    const { listings, currentDate } = this.state
+    const todayListing = listings.filter(listing => listing.display_date == currentDate)
+    console.log(todayListing)
+
+    this.setState({
+      currentListing: todayListing[0]
+    })
+  }
   
   updateUserInfo = (gameId, endGame) => {
     //Check userinfo from local storage
