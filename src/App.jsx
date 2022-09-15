@@ -7,6 +7,7 @@ import { isWinningGuess } from './Services/GameCalcs';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import * as dayjs from 'dayjs'
+import * as LocalStorage from './LocalStorage';
 
 
 class App extends React.Component {
@@ -27,7 +28,8 @@ class App extends React.Component {
     gameOver: false,
     gameResult: null,
     currentDate: '',
-    currentListing: ''
+    currentListing: '',
+    listingId: ''
   }
 
  componentDidMount = () => {
@@ -49,7 +51,8 @@ class App extends React.Component {
     console.log(todayListing)
 
     this.setState({
-      currentListing: todayListing[0]
+      currentListing: todayListing[0],
+      listingId: todayListing[0].id
     })
   }
   
@@ -57,8 +60,7 @@ class App extends React.Component {
     //Check userinfo from local storage
     //If user has local storage matching todays game, update it to state
     //If user does not, start a new game with new instance of user state
-
-    
+    const clientStateFromLocalStorage = LocalStorage.getClientState();
      
   }
 
@@ -69,7 +71,7 @@ class App extends React.Component {
     //Update guesses with latest guess
     //Determine if the guess is a winner
     //If guess not a winner, determine if game should continue
-    const { gameOver } = this.state;
+    const { gameOver, listingId, guesses } = this.state;
     const soldPrice = this.state.listingData.sold_price
 
     
@@ -86,6 +88,8 @@ class App extends React.Component {
         this.setState({
           gameOver: true
         })
+
+        
       }
 
       if (checkForWin) {
@@ -103,6 +107,15 @@ class App extends React.Component {
       this.setState({
       currentGuess: guessCount + 1
     })
+
+    
+    const updatedUserState = {
+      id: listingId,
+      guesses: this.state.guesses
+      
+    }
+
+    LocalStorage.updateClientState(updatedUserState)
   }
     
     )
