@@ -29,7 +29,8 @@ class App extends React.Component {
     gameResult: null,
     currentDate: '',
     currentListing: '',
-    listingId: ''
+    listingId: '',
+    userGameInfo: {}
   }
 
  componentDidMount = () => {
@@ -58,9 +59,28 @@ class App extends React.Component {
   
   updateUserInfo = (gameId, endGame) => {
     //Check userinfo from local storage
-    //If user has local storage matching todays game, update it to state
-    //If user does not, start a new game with new instance of user state
+   
     const clientStateFromLocalStorage = LocalStorage.getClientState();
+
+    //Adds any gameinfo to state
+    this.setState({
+      userGameInfo: {
+      ...clientStateFromLocalStorage
+      }
+    })
+
+    if (!this.state.listingId === this.state.userGameInfo.id) {
+      console.log('fun')
+    }
+    
+
+     //If user has local storage matching todays game, update it to state
+    //If user does not, start a new game with new instance of user state
+
+    //Check if gameID is todays game
+    //If gameID is today's game, check if game is over
+    //If game is over, set
+   
      
   }
 

@@ -2,7 +2,7 @@ export default {
   "listings": [
     {
       "id": 1,
-      "display_date": "2022-09-16",
+      "display_date": "2022-09-15",
       "city": "San Francisco",
       "province": "Ontario",
       "property_type": "Condo",
@@ -22,7 +22,7 @@ export default {
     },
     {
       "id": 2,
-      "display_date": "2022-09-15",
+      "display_date": "2022-09-16",
       "city": "Hello",
       "province": "Ontario",
       "property_type": "Condo",
