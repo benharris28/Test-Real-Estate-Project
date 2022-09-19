@@ -69,7 +69,8 @@ class App extends React.Component {
       id: '',
       gameOver: false,
       gameResult: '',
-      guesses: []
+      guesses: [],
+      currentGuess: ''
     }
 
     //Adds any gameinfo to state
@@ -108,14 +109,18 @@ class App extends React.Component {
     //Update guesses with latest guess
     //Determine if the guess is a winner
     //If guess not a winner, determine if game should continue
-    const { gameOver, listingId, guesses } = this.state;
+    const { userGameInfo, gameOver, listingId, guesses } = this.state;
     const soldPrice = this.state.listingData.sold_price
 
     
     this.setState({
-      guesses: [...this.state.guesses, guess]
+      guesses: [...this.state.guesses, guess],
+      userGameInfo: {
+        ...userGameInfo,
+        guesses: [...this.state.guesses, guess]
+      }
     }, () => {
-      const guessCount = this.state.guesses.length
+      const guessCount = this.state.userGameInfo.guesses.length
       const maxGuesses = 5
       const totalGuesses = guessCount + 1
 
@@ -123,7 +128,11 @@ class App extends React.Component {
 
       if (guessCount >= maxGuesses || checkForWin) {
         this.setState({
-          gameOver: true
+          gameOver: true,
+          userGameInfo: {
+            ...userGameInfo,
+            gameOver: true
+          }
         })
 
         
@@ -143,12 +152,12 @@ class App extends React.Component {
 
       this.setState({
       currentGuess: guessCount + 1
+        
     })
 
     
     const updatedUserState = {
-      id: listingId,
-      guesses: this.state.guesses
+      ...userGameInfo
       
     }
 
