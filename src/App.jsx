@@ -42,7 +42,7 @@ class App extends React.Component {
      currentDate: a
    }, this.updateListing)
    
-   this.updateUserInfo();
+   
  }
 
   updateListing = () => {
@@ -54,23 +54,40 @@ class App extends React.Component {
     this.setState({
       currentListing: todayListing[0],
       listingId: todayListing[0].id
-    })
+    }, this.updateUserInfo)
   }
   
-  updateUserInfo = (gameId, endGame) => {
+  async updateUserInfo() {
     //Check userinfo from local storage
    
     const clientStateFromLocalStorage = LocalStorage.getClientState();
 
+    console.log(clientStateFromLocalStorage)
+    console.log(clientStateFromLocalStorage.id)
+    
+    const newUserInfo = {
+      id: '',
+      gameOver: false,
+      gameResult: '',
+      guesses: []
+    }
+
     //Adds any gameinfo to state
-    this.setState({
+    
+
+    if (this.state.listingId == clientStateFromLocalStorage.id) {
+      this.setState({
       userGameInfo: {
-      ...clientStateFromLocalStorage
+        ...clientStateFromLocalStorage
       }
     })
-
-    if (!this.state.listingId === this.state.userGameInfo.id) {
-      console.log('fun')
+      
+    } else {
+      this.setState({
+        userGameInfo: {
+          ...newUserInfo
+        }
+      })
     }
     
 
