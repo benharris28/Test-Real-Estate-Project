@@ -64,7 +64,7 @@ class Listing extends React.Component {
           </Card.ImgOverlay>
 
           <Card.Body>
-            <Container>
+            <Container className="listing-card-container">
               <Row>
                 <Col>
                   <Card className="listing-card margin-bottom">
@@ -148,6 +148,33 @@ class Listing extends React.Component {
                     <div className="feature-title">Lot Size</div>
                   </Card>
 
+                </Col>
+              </Row>
+              <Row>
+                <Col className="feature-group">
+                  <Card className="listing-card margin-bottom feature-group-item">
+
+                    <ListingDetail
+                      showAnswer={this.showAnswer}
+                      name="prev_sale_date"
+                      helpText="Prev Sale"
+                      detailTitle={listing.prev_sale_date}
+                      value={listing.prev_sale_date}
+                    />
+                    <div className="feature-title">Sq Ft</div>
+                  </Card>
+
+                  <Card className="listing-card margin-bottom">
+
+                    <ListingDetail
+                      showAnswer={this.showAnswer}
+                      name="lot_size"
+                      helpText="Lot Size"
+                      detailTitle={listing.lot_size}
+                      value={listing.lot_size}
+                    />
+                    <div className="feature-title">Lot Size</div>
+                  </Card>
                 </Col>
               </Row>
 
