@@ -56,21 +56,35 @@ class GuessForm extends React.Component {
 
     console.log(this.state)
     const { gameOver, gameResult, userGameInfo } = this.context;
-    
-    const currentGuess = userGameInfo.guesses.length + 1
+
+    const maxGuesses = 5
+    const currentGuess = userGameInfo.guesses.length
+    const guessesLeft = maxGuesses - currentGuess
+    console.log(guessesLeft)
     
     return (
       <div className="margin-bottom medium">
      
         <div className="feedback-area margin-bottom">
-          {this.handleFeedback(userGameInfo.lastGuess)}
-          {!currentGuess && <Alert variant="success">Time to put in your first guess</Alert>}
+          <Alert variant="success">
+            {!currentGuess && <p>Time to put in your first guess. You have a total of 5 guesses</p>}
+            
+            {currentGuess > 0 && !userGameInfo.gameOver && this.handleFeedback(userGameInfo.lastGuess)}
+         
+            {!userGameInfo.gameOver && currentGuess > 0 &&
+              <p>You have {guessesLeft} more guesses</p>
+            }
 
-          {currentGuess && !userGameInfo.gameOver && <div>Time to put in your next guess</div>}
+            {userGameInfo.gameOver && userGameInfo.gameResult === 'win' && <p>You did it!</p>}
 
-          {gameResult === 'win' && <div>You guessed correctly! You have a bright future as a realtor</div>}
+            {userGameInfo.gameOver && userGameInfo.gameResult === 'lose' && <p>Sorry! You didn't guess correctly! The price of the property sold for ${sold_price}. You can visit the listing here </p>}
 
-          {gameResult === 'lose' && <Alert variant="danger">Game over! You will never be a realtor!</Alert>}
+            
+          </Alert>
+          
+
+          
+          
         </div>
 
         {!userGameInfo.gameOver && 

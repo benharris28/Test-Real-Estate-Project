@@ -137,7 +137,7 @@ class App extends React.Component {
           gameOver: true,
           userGameInfo: {
             ...userGameInfo,
-            gameOver: true
+            gameOver: true,
           }
         }, () => LocalStorage.updateClientState(this.state.userGameInfo))
 
@@ -146,13 +146,23 @@ class App extends React.Component {
 
       if (checkForWin) {
         this.setState({
-          gameResult: 'win'
+          gameResult: 'win',
+          userGameInfo: {
+            ...userGameInfo,
+            gameResult: 'win',
+            gameOver: true
+          }
         })
       }
 
        if (guessCount >= maxGuesses && !checkForWin) {
         this.setState({
-          gameResult: 'lose'
+          gameResult: 'lose',
+           userGameInfo: {
+            ...userGameInfo,
+            gameResult: 'lose',
+            gameOver: true
+          }
         })
       }
 
