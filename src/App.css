@@ -8,11 +8,23 @@
   max-width: 500px;
 }
 
+.listing-card {
+  border: 0px;
+}
+
+.listing-card {
+  border-width: 0px!important;
+}
+
 .carg-img {
   object-fit: cover;
   width: 200px;
 }
 
+.listing-detail-answer {
+  font-size: 16px;
+  font-weight: 700;
+}
 .listing-detail-answer-blur {
   filter: blur(5px);
 }

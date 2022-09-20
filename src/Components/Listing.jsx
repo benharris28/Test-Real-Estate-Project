@@ -67,7 +67,7 @@ class Listing extends React.Component {
             <Container>
               <Row>
                 <Col>
-                  <Card className="margin-bottom">
+                  <Card className="listing-card margin-bottom">
 
 
                     <ListingDetail
@@ -82,7 +82,7 @@ class Listing extends React.Component {
                 </Col>
 
                 <Col>
-                  <Card className="margin-bottom">
+                  <Card className="listing-card margin-bottom">
 
                     <ListingDetail
                       showAnswer={this.showAnswer}
@@ -98,7 +98,7 @@ class Listing extends React.Component {
 
               <Row>
                 <Col className="feature-group">
-                  <Card className="margin-bottom feature-group-item">
+                  <Card className="listing-card margin-bottom feature-group-item">
 
                     <ListingDetail
                       showAnswer={this.showAnswer}
@@ -110,7 +110,7 @@ class Listing extends React.Component {
                     <div className="feature-title">Beds</div>
                   </Card>
 
-                  <Card className="margin-bottom">
+                  <Card className="listing-card margin-bottom">
 
                     <ListingDetail
                       showAnswer={this.showAnswer}
@@ -124,7 +124,7 @@ class Listing extends React.Component {
 
                 </Col>
                 <Col className="feature-group">
-                  <Card className="margin-bottom">
+                  <Card className="listing-card margin-bottom feature-group-item">
 
                     <ListingDetail
                       showAnswer={this.showAnswer}
@@ -136,7 +136,7 @@ class Listing extends React.Component {
                     <div className="feature-title">Sq Ft</div>
                   </Card>
 
-                  <Card>
+                  <Card className="listing-card margin-bottom">
 
                     <ListingDetail
                       showAnswer={this.showAnswer}
