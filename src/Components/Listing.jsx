@@ -23,10 +23,10 @@ class Listing extends React.Component {
     let show = false;
 
     const detailsList = ['location', 'property_type', 'beds', 'sq_ft', 'lot_size']
-    const totalGuesses = this.context.guesses.length
+    const totalGuesses = this.context.userGameInfo.guesses.length
+    const guessNumber = totalGuesses + 1
     
-    
-    if (totalGuesses > detailsList.indexOf(name) && this.context.currentGuess) {
+    if (totalGuesses > detailsList.indexOf(name) && guessNumber) {
        show = true
     }
 

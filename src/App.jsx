@@ -30,7 +30,10 @@ class App extends React.Component {
     currentDate: '',
     currentListing: '',
     listingId: '',
-    userGameInfo: {}
+    userGameInfo: {
+      id: '',
+      guesses: []
+    }
   }
 
  componentDidMount = () => {
