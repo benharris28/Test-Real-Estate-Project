@@ -1,6 +1,7 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
 import Alert from 'react-bootstrap/Alert';
+import { isWinningGuess, isCloseGuess } from '../Services/GameCalcs';
 
 
 class GuessForm extends React.Component {
@@ -33,21 +34,39 @@ class GuessForm extends React.Component {
     })
   }
 
+  handleFeedback = (guess) => {
+    const { sold_price } = this.context.currentListing
+
+    
+
+    if (isWinningGuess(guess,sold_price)) {
+      return <div>You guessed the price</div>
+    } else if (isCloseGuess(guess,sold_price)) {
+      return <div>So close</div>
+    } else {
+      return <div>Not even close</div>
+    }
+    
+  }
+
  
 
   
   render() {
 
     console.log(this.state)
-    const { gameOver, currentGuess, gameResult, userGameInfo } = this.context;
+    const { gameOver, gameResult, userGameInfo } = this.context;
+    
+    const currentGuess = userGameInfo.guesses.length + 1
     
     return (
       <div className="margin-bottom medium">
      
         <div className="feedback-area margin-bottom">
+          {this.handleFeedback(userGameInfo.lastGuess)}
           {!currentGuess && <Alert variant="success">Time to put in your first guess</Alert>}
 
-          {currentGuess && !gameOver && <div>Time to put in your next guess</div>}
+          {currentGuess && !userGameInfo.gameOver && <div>Time to put in your next guess</div>}
 
           {gameResult === 'win' && <div>You guessed correctly! You have a bright future as a realtor</div>}
 

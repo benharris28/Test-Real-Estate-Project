@@ -121,7 +121,8 @@ class App extends React.Component {
       userGameInfo: {
         ...userGameInfo,
         id: listingId,
-        guesses: [...this.state.userGameInfo.guesses, guess]
+        guesses: [...this.state.userGameInfo.guesses, guess],
+        lastGuess: guess
       }
     }, () => {
       const { userGameInfo } = this.state
