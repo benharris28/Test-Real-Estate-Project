@@ -117,9 +117,11 @@ class App extends React.Component {
       guesses: [...this.state.guesses, guess],
       userGameInfo: {
         ...userGameInfo,
+        id: listingId,
         guesses: [...this.state.guesses, guess]
       }
     }, () => {
+      const { userGameInfo } = this.state
       const guessCount = this.state.userGameInfo.guesses.length
       const maxGuesses = 5
       const totalGuesses = guessCount + 1
@@ -156,6 +158,7 @@ class App extends React.Component {
     })
 
     
+      
     const updatedUserState = {
       ...userGameInfo
       
