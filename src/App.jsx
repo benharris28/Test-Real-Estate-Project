@@ -135,7 +135,7 @@ class App extends React.Component {
             ...userGameInfo,
             gameOver: true
           }
-        })
+        }, () => LocalStorage.updateClientState(this.state.userGameInfo))
 
         
       }
