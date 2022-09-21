@@ -63,7 +63,7 @@ class Listing extends React.Component {
 
           </Card.ImgOverlay>
 
-          <Card.Body>
+          <Card.Body className="listing-card-body">
             <Container className="listing-card-container">
               <Row>
                 <Col>

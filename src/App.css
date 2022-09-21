@@ -19,6 +19,7 @@
 .carg-img {
   object-fit: cover;
   width: 200px;
+  height:200px!important;
 }
 
 .listing-detail-answer {
@@ -27,6 +28,19 @@
 }
 .listing-detail-answer-blur {
   filter: blur(5px);
+}
+
+.listing-card-body {
+  padding-bottom:0px!important;
+}
+
+.alert {
+  padding-top: 0.5rem!important;
+  padding-bottom: 0.5rem!important;
+}
+
+.alert p {
+  margin-bottom: 0px;
 }
 
 .margin-bottom {
@@ -39,6 +53,14 @@
 
 .feature-group-item {
   margin-right: 1rem;
+}
+
+.guess-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
 }
 
 .guess-form-submit-button {
