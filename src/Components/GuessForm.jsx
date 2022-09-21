@@ -45,9 +45,16 @@ class GuessForm extends React.Component {
     if (isWinningGuess(guess,sold_price)) {
       return <div>You guessed the price</div>
     } else if (isCloseGuess(guess,sold_price)) {
-      return <div>So close</div>
-    } else {
-      return <div>Not even close</div>
+      if (guess < sold_price) {
+        return <div>So close! Try a bit higher</div>
+      } else {
+        return <div>So close! Try a bit lower</div>
+      }
+      
+    } else if (guess > sold_price) {
+      return <div>Try a lot lower</div>
+    } else if (guess < sold_price) {
+      return <div>Try a lot higher</div>
     }
     
   }
