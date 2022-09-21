@@ -23,7 +23,7 @@ class Listing extends React.Component {
 
     let show = false;
 
-    const detailsList = ['location', 'property_type', 'beds', 'sq_ft', 'lot_size']
+    const detailsList = ['one', 'two', 'three', 'four', 'five', 'location', 'property_type', 'beds', 'sq_ft', 'lot_size']
     const totalGuesses = this.context.userGameInfo.guesses.length
     const { gameOver } = this.context.userGameInfo
     const guessNumber = totalGuesses + 1
@@ -73,6 +73,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="location"
+                      revealGroup="one"
                       helpText="Location"
                       detailTitle={listing.property_type}
                       value={`${listing.city}, ${listing.province}`}
@@ -87,6 +88,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="property_type"
+                      revealGroup="two"
                       helpText="Property Type"
                       detailTitle={listing.property_type}
                       value={listing.property_type}
@@ -103,6 +105,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="beds"
+                      revealGroup="three"
                       helpText="Bedrooms"
                       detailTitle={listing.beds}
                       value={listing.beds}
@@ -115,6 +118,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="beds"
+                      revealGroup="three"
                       helpText="Bedrooms"
                       detailTitle={listing.beds}
                       value={listing.baths}
@@ -129,6 +133,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="sq_ft"
+                      revealGroup="four"
                       helpText="Square Feet"
                       detailTitle={listing.sq_ft}
                       value={listing.sq_ft}
@@ -141,6 +146,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="lot_size"
+                      revealGroup="four"
                       helpText="Lot Size"
                       detailTitle={listing.lot_size}
                       value={listing.lot_size}
@@ -157,6 +163,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="prev_sale_date"
+                      revealGroup="five"
                       helpText="Prev Sale"
                       detailTitle={listing.prev_sale_date}
                       value={listing.prev_sale_date}
@@ -169,6 +176,7 @@ class Listing extends React.Component {
                     <ListingDetail
                       showAnswer={this.showAnswer}
                       name="lot_size"
+                      revealGroup="five"
                       helpText="Lot Size"
                       detailTitle={listing.lot_size}
                       value={listing.prev_sale_price}

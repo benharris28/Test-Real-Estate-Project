@@ -18,9 +18,9 @@ class ListingDetail extends React.Component {
   render() {
 
     const { listing } = this.state
-    const { showAnswer, name, helpText, detailTitle, value } = this.props
+    const { showAnswer, name, helpText, detailTitle, value, revealGroup } = this.props
     console.log(name)
-    const show = showAnswer(name)
+    const show = showAnswer(revealGroup)
 
     console.log(show)
     
