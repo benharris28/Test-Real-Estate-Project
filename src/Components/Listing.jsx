@@ -183,6 +183,9 @@ class Listing extends React.Component {
                     <div className="feature-title">Prev Sale</div>
                   </Card>
 
+                  
+                </Col>
+                <Col>
                   <Card className="listing-card margin-bottom">
 
                     <ListingDetail

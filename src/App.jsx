@@ -10,6 +10,8 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import * as dayjs from 'dayjs'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo, faChartLine } from '@fortawesome/free-solid-svg-icons'
 import * as LocalStorage from './LocalStorage';
 
 
@@ -216,18 +218,21 @@ class App extends React.Component {
          
               
                 <Row>
-                  <Col className="nav-item">
+                  <Col className="nav-item" xs={3} md={3}>
                     <img
                   src='https://www.readthepeak.com/assets/logo-colour-f2d4b090f4edf1677799a0316f4d2db77c900e6ea8fa93c578cb43b7a37bd50a.png'
                      width="70"
                     height="30"
                   />
                   </Col>
-                  <Col className="nav-item">
-                    <h4 className="nav-title">Housify</h4>
+                  <Col className="nav-item" xs={6} md={6}>
+                    <h4 className="nav-title">HOUSIFY</h4>
                   </Col>
-                    <Col className="nav-item">
-                    <h4 className="nav-title">Housify</h4>
+                    <Col className="nav-item" xs={1} md={1}>
+                      <FontAwesomeIcon icon={faCircleInfo} />
+                  </Col>
+                     <Col className="nav-item" xs={1} md={1}>
+                      <FontAwesomeIcon icon={faChartLine} />
                   </Col>
                 </Row>
                 

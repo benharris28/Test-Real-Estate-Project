@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "bootstrap": "^5.2.0",
     "dayjs": "^1.11.5",
+    "font-awesome": "^4.7.0",
     "htm": "^3.1.1",
     "react-bootstrap": "^2.5.0",
     "unistore": "^3.5.2"
