@@ -31,7 +31,7 @@ class ListingDetail extends React.Component {
         }
 
         {!show && 
-          <div className="listing-detail-answer-blur">Placeholder</div>
+          <div className="listing-detail-answer-blur">XXX</div>
         }
         
         

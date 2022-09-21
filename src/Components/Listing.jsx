@@ -161,7 +161,7 @@ class Listing extends React.Component {
                       detailTitle={listing.prev_sale_date}
                       value={listing.prev_sale_date}
                     />
-                    <div className="feature-title">Sq Ft</div>
+                    <div className="feature-title">Prev Sale</div>
                   </Card>
 
                   <Card className="listing-card margin-bottom">
@@ -171,9 +171,9 @@ class Listing extends React.Component {
                       name="lot_size"
                       helpText="Lot Size"
                       detailTitle={listing.lot_size}
-                      value={listing.lot_size}
+                      value={listing.prev_sale_price}
                     />
-                    <div className="feature-title">Lot Size</div>
+                    <div className="feature-title">Prev Price</div>
                   </Card>
                 </Col>
               </Row>

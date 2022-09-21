@@ -41,8 +41,8 @@ export default {
       "sold_date": "2022-08-27"
     },
 {
-      "id": 12,
-      "display_date": "2022-09-20",
+      "id": 13,
+      "display_date": "2022-09-21",
       "city": "Hello",
       "province": "Ontario",
       "property_type": "Condo",
