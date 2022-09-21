@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Carousel from 'react-bootstrap/Carousel';
 
 class Listing extends React.Component {
   static contextType = ApiContext;
@@ -51,7 +52,15 @@ class Listing extends React.Component {
     return (
       <div className="listing margin-bottom">
         <Card>
-          <Card.Img variant="top" src={listing.listing_image_url} />
+          <Carousel>
+            <Carousel.Item>
+              <Card.Img variant="top" src={listing.listing_image_url} />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Card.Img variant="top" src={listing.listing_image_url} />
+            </Carousel.Item>
+          </Carousel>
+        
           <div className="listing-hero">
 
 
@@ -59,7 +68,10 @@ class Listing extends React.Component {
           </div>
 
           <Card.ImgOverlay>
-            <Card.Title>Sold on {listing.prev_sale_date} </Card.Title>
+            <div className="date-sold-container">
+                Sold on {listing.prev_sale_date}
+            </div>
+            
 
           </Card.ImgOverlay>
 

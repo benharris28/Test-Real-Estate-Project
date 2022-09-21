@@ -6,6 +6,9 @@ import Game from './Components/Game';
 import { isWinningGuess } from './Services/GameCalcs';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import * as dayjs from 'dayjs'
 import * as LocalStorage from './LocalStorage';
 
@@ -207,11 +210,33 @@ class App extends React.Component {
       <ApiContext.Provider value={value}>
         
            <div className="app">
-             <Navbar style={{ 'background-color': '#1CC468' }}>
-            <Container>
-              <Navbar.Brand href="#home" style={{ 'color': 'white' }}>Peak Real Estate Game</Navbar.Brand>
+          
+            <div className="nav">
+             <Container>
+         
+              
+                <Row>
+                  <Col className="nav-item">
+                    <img
+                  src='https://www.readthepeak.com/assets/logo-colour-f2d4b090f4edf1677799a0316f4d2db77c900e6ea8fa93c578cb43b7a37bd50a.png'
+                     width="70"
+                    height="30"
+                  />
+                  </Col>
+                  <Col className="nav-item">
+                    <h4 className="nav-title">Housify</h4>
+                  </Col>
+                    <Col className="nav-item">
+                    <h4 className="nav-title">Housify</h4>
+                  </Col>
+                </Row>
+                
+              
+             
+           
             </Container>
-          </Navbar>
+              </div>
+       
              <Container className="p-3">
           
           
