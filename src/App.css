@@ -19,7 +19,11 @@
 .carg-img {
   object-fit: cover;
   width: 200px;
-  height:200px!important;
+  height:100px!important;
+}
+
+.card-image-top {
+  height:100px!important;
 }
 
 .listing-detail-answer {

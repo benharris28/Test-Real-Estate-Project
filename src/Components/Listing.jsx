@@ -179,7 +179,7 @@ class Listing extends React.Component {
                       revealGroup="five"
                       helpText="Lot Size"
                       detailTitle={listing.lot_size}
-                      value={listing.prev_sale_price}
+                      value={ `$${listing.prev_sale_price}`}
                     />
                     <div className="feature-title">Prev Price</div>
                   </Card>
