@@ -1,6 +1,9 @@
 import React from 'react';
 import ApiContext from '../ApiContext'
 import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { isWinningGuess, isCloseGuess } from '../Services/GameCalcs';
 
 
@@ -91,20 +94,30 @@ class GuessForm extends React.Component {
         <form
           className="guess-form"
         >
+          <Container>
+            <Row>
+              <Col xs={8} md={8} className="guess-form-column">
+            
           <input
             name="guess"
             className="guess-form-input"
             type="number"
+            placeholder="Type your guess"
             value={this.state.guessValue}
             onChange={(e) => this.handleCurrentGuess(e.target.value)}
             >
           </input>
+                </Col>
+              <Col>
           <button
             className="guess-form-submit-button"
             onClick={this.handleSubmit}
             >
             Guess
           </button>
+                </Col>
+              </Row>
+            </Container>
         </form>
         }
      

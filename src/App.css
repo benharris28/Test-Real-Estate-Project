@@ -41,6 +41,25 @@
   margin-right: 1rem;
 }
 
+.guess-form-submit-button {
+  background-color: #1CC468!important;
+  width: 100%;
+  border: 0px;
+  font-size: 16px;
+  height: 100%;
+  color: white;
+  border-radius: 5px;
+}
+
+.guess-form-input {
+  width: 100%;
+}
+
+.guess-form-column {
+  padding-left: 0px!important;
+  
+}
+
 @media screen and (max-width: 600px) {
   .feature-title {
     font-size: 14px;

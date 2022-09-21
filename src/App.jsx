@@ -207,9 +207,9 @@ class App extends React.Component {
       <ApiContext.Provider value={value}>
         
            <div className="app">
-             <Navbar bg="light">
+             <Navbar style={{ 'background-color': '#1CC468' }}>
             <Container>
-              <Navbar.Brand href="#home">Peak Real Estate Game</Navbar.Brand>
+              <Navbar.Brand href="#home" style={{ 'color': 'white' }}>Peak Real Estate Game</Navbar.Brand>
             </Container>
           </Navbar>
              <Container className="p-3">
