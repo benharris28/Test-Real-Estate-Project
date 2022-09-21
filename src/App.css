@@ -1,12 +1,26 @@
 
+html {
+  height: 100%;
+}
 
 * {
   box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+}
+
+body.lock-zoom {
+  touch-action: none;
+  overscroll-behavior-y: none;
+}
+
 .nav {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+  max-width: 500px;
+  margin: auto;
 }
 
 .nav-item {
@@ -45,6 +59,13 @@
 
 .card-image-top {
   height:100px!important;
+}
+
+
+
+
+.card-img, .card-img-bottom, .card-img-top {
+  height:280px!important;
 }
 
 .listing-detail-answer {
@@ -142,5 +163,9 @@
   left: 0;
   right: 0;
   padding: 1rem;
+}
+
+  .card-img, .card-img-bottom, .card-img-top {
+  height:230px!important;
 }
 }
