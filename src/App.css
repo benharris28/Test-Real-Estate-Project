@@ -19,6 +19,7 @@ body.lock-zoom {
 .nav {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
+  padding-top:0.3rem;
   max-width: 500px;
   margin: auto;
 }
