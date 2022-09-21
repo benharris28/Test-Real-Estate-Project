@@ -54,10 +54,13 @@ class Listing extends React.Component {
         <Card>
           <Carousel>
             <Carousel.Item>
-              <Card.Img variant="top" src={listing.listing_image_url} />
+              <Card.Img variant="top" src={listing.listing_image_url_1} />
             </Carousel.Item>
             <Carousel.Item>
-              <Card.Img variant="top" src={listing.listing_image_url} />
+              <Card.Img variant="top" src={listing.listing_image_url_2} />
+            </Carousel.Item>
+            <Carousel.Item>
+              <Card.Img variant="top" src={listing.listing_image_url_3} />
             </Carousel.Item>
           </Carousel>
         
@@ -69,7 +72,7 @@ class Listing extends React.Component {
 
           <Card.ImgOverlay>
             <div className="date-sold-container">
-                Sold on {listing.prev_sale_date}
+                Sold on {listing.sold_date}
             </div>
             
 

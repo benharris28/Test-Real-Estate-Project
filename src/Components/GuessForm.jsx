@@ -80,7 +80,7 @@ class GuessForm extends React.Component {
 
             {userGameInfo.gameOver && userGameInfo.gameResult === 'win' && <p>You did it!</p>}
 
-            {userGameInfo.gameOver && userGameInfo.gameResult === 'lose' && <p>Sorry! You didn't guess correctly! The price of the property sold for ${currentListing.sold_price}. You can visit the listing here </p>}
+            {userGameInfo.gameOver && userGameInfo.gameResult === 'lose' && <p>Sorry! You didn't guess correctly! The property sold for ${currentListing.sold_price}. You can visit the listing here. A new listing will be posted tomorrow! </p>}
 
             
           </Alert>
