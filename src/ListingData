@@ -42,7 +42,7 @@ export default {
     },
 {
       "id": 13,
-      "display_date": "2022-09-21",
+      "display_date": "2022-09-22",
       "city": "Toronto",
       "province": "Ontario",
       "property_type": "Detached",

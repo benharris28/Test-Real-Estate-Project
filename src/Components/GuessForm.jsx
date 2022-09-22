@@ -65,7 +65,7 @@ class GuessForm extends React.Component {
   render() {
 
     console.log(this.state)
-    const { gameOver, gameResult, userGameInfo, currentListing } = this.context;
+    const { gameOver, win, userGameInfo, currentListing } = this.context;
 
     const maxGuesses = 5
     const currentGuess = userGameInfo.guesses.length
@@ -85,9 +85,9 @@ class GuessForm extends React.Component {
               <p>You have {guessesLeft} more guesses</p>
             }
 
-            {userGameInfo.gameOver && userGameInfo.gameResult === 'win' && <p>You did it!</p>}
+            {userGameInfo.gameOver && userGameInfo.win && <p>You did it!</p>}
 
-            {userGameInfo.gameOver && userGameInfo.gameResult === 'lose' && <p>Sorry! You didn't guess correctly! The property sold for ${currentListing.sold_price}. You can visit the listing here. A new listing will be posted tomorrow! </p>}
+            {userGameInfo.gameOver && !userGameInfo.win && <p>Sorry! You didn't guess correctly! The property sold for ${currentListing.sold_price}. You can visit the listing here. A new listing will be posted tomorrow! </p>}
 
             
           </Alert>

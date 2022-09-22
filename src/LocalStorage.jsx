@@ -46,10 +46,10 @@ export function getClientState() {
   return getItem('clientState');
 }
 
-export function saveUserStats(userStats) {
-  setItem('userStats', userStats);
+export function setStats(stats) {
+  setItem('stats', stats);
 }
 
-export function getUserStats() {
-  return getItem('userStats');
+export function getStats() {
+  return getItem('stats');
 }

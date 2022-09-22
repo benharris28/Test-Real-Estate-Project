@@ -5,3 +5,5 @@ const score = (guess, answer) => Math.abs((guess - answer) / answer);
 
 export const isWinningGuess = (guess, answer) => score(guess, answer) <= THRESHOLD_WIN;
 export const isCloseGuess = (guess, answer) => score(guess, answer) <= THRESHOLD_CLOSE;
+
+  

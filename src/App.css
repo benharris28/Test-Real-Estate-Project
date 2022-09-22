@@ -94,7 +94,7 @@ body.lock-zoom {
 }
 
 .margin-bottom {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .feature-group {
@@ -167,6 +167,6 @@ body.lock-zoom {
 }
 
   .card-img, .card-img-bottom, .card-img-top {
-  height:230px!important;
+  height:210px!important;
 }
 }

@@ -4,6 +4,7 @@ import ListingData from './ListingData';
 import ApiContext from './ApiContext';
 import Game from './Components/Game';
 import { isWinningGuess } from './Services/GameCalcs';
+import { updateStats } from './Services/Stats';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -76,7 +77,7 @@ class App extends React.Component {
     const newUserInfo = {
       id: '',
       gameOver: false,
-      gameResult: '',
+      win: '',
       guesses: [],
       currentGuess: ''
     }
@@ -143,33 +144,18 @@ class App extends React.Component {
           userGameInfo: {
             ...userGameInfo,
             gameOver: true,
+            win: checkForWin
           }
-        }, () => LocalStorage.updateClientState(this.state.userGameInfo))
+        }, () => {
+          LocalStorage.updateClientState(this.state.userGameInfo)
+          updateStats(this.state.userGameInfo)
+        
+        })
 
         
       }
 
-      if (checkForWin) {
-        this.setState({
-          gameResult: 'win',
-          userGameInfo: {
-            ...userGameInfo,
-            gameResult: 'win',
-            gameOver: true
-          }
-        })
-      }
-
-       if (guessCount >= maxGuesses && !checkForWin) {
-        this.setState({
-          gameResult: 'lose',
-           userGameInfo: {
-            ...userGameInfo,
-            gameResult: 'lose',
-            gameOver: true
-          }
-        })
-      }
+  
 
       this.setState({
       currentGuess: guessCount + 1
@@ -191,7 +177,7 @@ class App extends React.Component {
    
     }
 
-  // Update local storage with guess history so it will persist
+
 
   
 
