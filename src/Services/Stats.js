@@ -25,6 +25,9 @@ export const updateStats = (userGameInfo) => {
   }
   
   const stats = LocalStorage.getStats();
+
+  //Update Game History
+  
   let updatedGames = [];
 
   if (stats) {
@@ -35,12 +38,38 @@ export const updateStats = (userGameInfo) => {
     console.log(updatedGames)
   }
 
+  //Update Game Streak
+  let gameStreakUpdate;
+  
+  if (stats) {
+  const todaysGame = userGameInfo.id
+  const games = stats.games
+  const lastGame = games[games.length - 1]
+  console.log(lastGame)
+
+  
+
+    if (todaysGame - lastGame.id == 1) {
+      gameStreakUpdate = stats.gameStreak + 1
+    } else {
+      gameStreakUpdate = 1
+    }
+    
+  } else {
+    gameStreakUpdate = 1
+  }
+
+  //Package the update
   const updatedStats = {
     games: updatedGames,
-    gameStreak: '',
+    gameStreak: gameStreakUpdate,
     winStreak: '',
     maxWinStreak: ''
   }
+
+  
+
+  
 
   LocalStorage.setStats(updatedStats)
 }
