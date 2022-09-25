@@ -29,6 +29,10 @@ export const updateStats = (userGameInfo) => {
   //Update Game History
   
   let updatedGames = [];
+  const todaysGame = userGameInfo.id
+  const games = stats.games
+  const lastGame = games[games.length - 1]
+  console.log(lastGame)
 
   if (stats) {
     updatedGames = [...stats.games, userGameInfo]
@@ -42,11 +46,6 @@ export const updateStats = (userGameInfo) => {
   let gameStreakUpdate;
   
   if (stats) {
-  const todaysGame = userGameInfo.id
-  const games = stats.games
-  const lastGame = games[games.length - 1]
-  console.log(lastGame)
-
   
 
     if (todaysGame - lastGame.id == 1) {
@@ -59,11 +58,25 @@ export const updateStats = (userGameInfo) => {
     gameStreakUpdate = 1
   }
 
+  // Update win streak
+  let winStreakUpdate;
+  
+  if (todaysGame - lastGame.id == 1) {
+    if (lastGame.win && todaysGame.win) {
+      winStreakUpdate = stats.winStreak + 1
+    } else {
+      winStreakUpdate = 1
+    }
+  }
+
+  //Update max win streak
+  
+
   //Package the update
   const updatedStats = {
     games: updatedGames,
     gameStreak: gameStreakUpdate,
-    winStreak: '',
+    winStreak: winStreakUpdate,
     maxWinStreak: ''
   }
 

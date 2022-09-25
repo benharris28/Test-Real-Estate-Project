@@ -41,8 +41,8 @@ export default {
       "sold_date": "2022-08-27"
     },
 {
-      "id": 13,
-      "display_date": "2022-09-22",
+      "id": 16,
+      "display_date": "2022-09-25",
       "city": "Toronto",
       "province": "Ontario",
       "property_type": "Detached",
