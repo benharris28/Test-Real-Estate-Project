@@ -232,6 +232,7 @@ class App extends React.Component {
           
           
           <Game />
+           
            </Container>
         </div>
       
