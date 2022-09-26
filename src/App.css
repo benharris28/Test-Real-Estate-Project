@@ -151,7 +151,7 @@ body.lock-zoom {
 
 @media screen and (max-width: 600px) {
   .feature-title {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .listing-card-container {
@@ -167,6 +167,6 @@ body.lock-zoom {
 }
 
   .card-img, .card-img-bottom, .card-img-top {
-  height:210px!important;
+  height:190px!important;
 }
 }

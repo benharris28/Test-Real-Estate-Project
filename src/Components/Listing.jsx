@@ -36,11 +36,17 @@ class Listing extends React.Component {
     return show;
   }
 
+  formatSoldPrice = () => {
+    return '$' + num.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
 
   render() {
 
     const listing = this.context.currentListing
-    console.log(listing)
+
+    //Format prev sold price and current sold price
+    
 
 
 
